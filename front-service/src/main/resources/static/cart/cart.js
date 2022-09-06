@@ -2,6 +2,7 @@ angular.module('market-front').controller('cartController', function ($scope, $r
     const contextPath = 'http://localhost:5555/getaway/api/v1';
 
     $scope.loadCart = function () {
+        console.log($localStorage.cartName)
         $http.post('http://localhost:5555/getaway/api/v1/carts', $localStorage.cartName)
             .then(function (response) {
                 $scope.Cart = response.data;
@@ -21,9 +22,9 @@ angular.module('market-front').controller('cartController', function ($scope, $r
             method: 'POST',
             data: {orderDetailsDto: $scope.orderDetails}
         }).then(function (response) {
-                $scope.loadCart();
-                $scope.orderDetails = null
-            });
+            $scope.loadCart();
+            $scope.orderDetails = null
+        });
     };
 
     $scope.disabledCheckOut = function () {
