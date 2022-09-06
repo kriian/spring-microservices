@@ -1,0 +1,21 @@
+server:
+  port: 8191
+  servlet:
+    context-path: /market-cart
+spring:
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+  cache:
+    default:
+      expire-time: 700000000
+    user:
+      expire-time: 100
+      name: "Cart"
+
+other:
+  cache:
+    cart: "Cart"
+

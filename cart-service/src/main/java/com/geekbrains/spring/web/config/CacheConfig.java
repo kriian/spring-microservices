@@ -1,4 +1,4 @@
-package com.geekbrains.spring.web.configs;
+package com.geekbrains.spring.web.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
@@ -40,8 +40,8 @@ public class CacheConfig {
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
                 // Устанавливаем значение для сериализации json
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
-                // Не кэшировать пустые значения
-//                .disableCachingNullValues();
+        // Не кэшировать пустые значения
+        // .disableCachingNullValues();
 
         Set<String> cacheNames = new HashSet<>();
         cacheNames.add(userCacheName);

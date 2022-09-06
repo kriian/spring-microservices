@@ -9,6 +9,7 @@
         <module>core-service</module>
         <module>front-service</module>
         <module>gateway</module>
+        <module>cart-service</module>
     </modules>
 
     <parent>
