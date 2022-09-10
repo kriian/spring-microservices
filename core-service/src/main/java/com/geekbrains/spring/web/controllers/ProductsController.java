@@ -31,7 +31,7 @@ public class ProductsController {
             page = 1;
         }
         return productsService.findAll(minPrice, maxPrice, titlePart, page).map(
-                p -> productConverter.entityToDto(p)
+                productConverter::entityToDto
         );
     }
 
